@@ -13,12 +13,18 @@ public class task1 {
         int number = Integer.parseInt(temp);
         System.out.printf("Вы ввели - %s\n", number);
         int count = 1;
-        int result = 0;
+        int result_sum = 0;
         while (count < number + 1) {
-            result = result + count;
+            result_sum = result_sum + count;
             count++;
         }
-        System.out.printf("Результат - %s\n", result);
+        count = 1;
+        System.out.printf("Результат вычисления треугольного числа - %s\n", result_sum);
+        System.out.printf("Результат вычисления n! - %s\n", factor(number));
         iScanner.close();
+    }
+    static int factor (int n) { // Решение n! через метод-рекурсию
+        if(n==1) return 1;
+        return n * factor(n-1);
     }
 }

@@ -86,10 +86,9 @@ public class task4 {
                                 }
                                 for (int n2 = 0; n2 < u; n2++) {
                                     if (isNumeric(temp_u)) {
-                                        n2 = Integer.parseInt(temp_y);
+                                        n2 = Integer.parseInt(temp_u);
                                         u = n2;
                                     }
-                                    if (isNumeric(temp_y)) n = Integer.parseInt(temp_y);
                                     if ((i * 10 + j) + (k * 10 + l) == (m * 100 + n * 10 + n2)) {
                                         int num1 = i * 10 + j;
                                         int num2 = k * 10 + l;

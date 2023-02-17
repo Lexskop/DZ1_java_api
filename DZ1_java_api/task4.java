@@ -1,4 +1,3 @@
-
 // Задание №4*:Задано уравнение вида q + w = e, q, w, e >= 0. 
 // Некоторые цифры могут быть заменены знаком вопроса, например 2? + ?5 = 69. 
 // Требуется восстановить выражение до верного равенства. 
@@ -6,9 +5,13 @@
 
 // Суть решения: вводите каждую цифру чисел отдельно. Если цифра не известна, то ставьте любой символ. 
 // По итогу получите все варианты решений с неизвестными цифрами. Неизвестные цифры могут быть как в сумме, так и в слагаемых.
+// Как я понял ошибка в intValue просто потому, что я делаю try с ней, но из нее не получаю никаких выходных данных, поэтому так
+// показывает, но это не является критической ошибкой и как я прочел из интернета - это просто предупреждение среды разработки.
 
 package DZ1_java_api;
+
 import java.util.Scanner;
+
 public class task4 {
 
     public static boolean isNumeric(String string) {
@@ -41,12 +44,15 @@ public class task4 {
         String temp_t = iScanner.nextLine();
         System.out.println("Введите шестую цифру уравнения: ");
         String temp_y = iScanner.nextLine();
+        System.out.println("Введите седьмую цифру уравнения: ");
+        String temp_u = iScanner.nextLine();
         int q = 10;
         int w = 10;
         int e = 10;
         int r = 10;
-        int t = 10;
+        int t = 2;
         int y = 10;
+        int u = 10;
 
         for (int i = 0; i < q; i++) {
             if (isNumeric(temp_q)) {
@@ -78,12 +84,18 @@ public class task4 {
                                     n = Integer.parseInt(temp_y);
                                     y = n;
                                 }
-                                if (isNumeric(temp_y)) n = Integer.parseInt(temp_y);
-                                if ((i * 10 + j) + (k * 10 + l) == (m * 10 + n)) {
-                                    int num1 = i * 10 + j;
-                                    int num2 = k * 10 + l;
-                                    int num3 = m * 10 + n;
-                                    System.out.printf("%s + %s = %s   ", num1, num2, num3);
+                                for (int n2 = 0; n2 < u; n2++) {
+                                    if (isNumeric(temp_u)) {
+                                        n2 = Integer.parseInt(temp_y);
+                                        u = n2;
+                                    }
+                                    if (isNumeric(temp_y)) n = Integer.parseInt(temp_y);
+                                    if ((i * 10 + j) + (k * 10 + l) == (m * 100 + n * 10 + n2)) {
+                                        int num1 = i * 10 + j;
+                                        int num2 = k * 10 + l;
+                                        int num3 = m * 100 + n * 10 + n2;
+                                        System.out.printf("%s + %s = %s   ", num1, num2, num3);
+                                    }
                                 }
                             }
                         }
@@ -91,8 +103,6 @@ public class task4 {
                 }
                 
             }
-        }
-        iScanner.close();
-    }
+        }iScanner.close();
+     }
 }
-

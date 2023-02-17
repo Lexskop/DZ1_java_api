@@ -9,13 +9,13 @@ public class task3 {
     public static void main(String[] args) {
         Scanner iScanner = new Scanner(System.in);
         System.out.println("Введите число A: ");
-        String temp = iScanner.nextLine();
-        int a = Integer.parseInt(temp);
-        System.out.println("Введите число B: ");
-        temp = iScanner.nextLine();
-        int b = Integer.parseInt(temp);
+        double a = iScanner.nextDouble();
+        iScanner.nextLine();
         System.out.println("Введите действие (любой знак: + - * /): ");
         String action = iScanner.nextLine();
+        System.out.println("Введите число B: ");
+        double b = iScanner.nextDouble();
+        
         switch (action) {
             case "+":
                 System.out.printf("Ответ: %s\n",a+b);
